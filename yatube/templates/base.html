@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>{{ title }}</title>
+</head>
+  <body>
+    <header>
+      {% include 'includes/header.html' %}
+    </header>
+    <main>
+      {% if text == 'Главная страница' %}
+        Это главная страница проекта Yatube
+      {% elif text == 'Вложенная страница' %}
+        Вы в одном клике от главной страницы!
+      {% else %}
+        Мы понятия не имеем, где вы!
+      {% endif %}
+
+      {% block content %}
+        Контент не подвезли :(
+      {% endblock %}
+    </main>
+    <footer>
+      {% include 'includes/footer.html' %}
+    </footer>
+  </body>
+</html>

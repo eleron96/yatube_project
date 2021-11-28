@@ -22,7 +22,7 @@ urlpatterns = [
     # Главная страница
     path('', views.index),
     # Список Постов
-    path('posts/', views.posts_list),
+    path('posts/group_list/', views.posts_list),
     # группа постов
-    path('posts/<slug:slug>/', views.group_posts),
+    path('posts/group_posts/', views.group_posts),
 ]
