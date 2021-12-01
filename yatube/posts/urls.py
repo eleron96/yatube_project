@@ -15,14 +15,13 @@ Including another URLconf
 """
 
 from django.urls import path
-
 from . import views
+
+app_name = 'posts'
 
 urlpatterns = [
     # Главная страница
-    path('', views.index),
+    path('', views.index, name='index'),
     # Список Постов
-    path('posts/group_list/', views.posts_list),
-    # группа постов
-    path('posts/group_posts/', views.group_posts),
+    path('group/<slug:slug>/', views.group_posts, name='group_list'),
 ]
