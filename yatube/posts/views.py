@@ -40,7 +40,7 @@ def group_posts(request, slug):
     # Это аналог WHERE group_id = {group_id}
     posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
     template = 'posts/group_posts.html'
-    title = f'Записи сообщества {group_posts}'
+    title = f'Записи сообщества {group.title}'
     context = {
         # В словарь можно передать переменную
         'title': title,
